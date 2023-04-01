@@ -1,6 +1,6 @@
 name: Python Linter & Tests
 
-on: [push | pull_request]
+on: [push, fork]
 
 jobs:
   runs-on: ubuntu-latest
