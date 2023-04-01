@@ -3,22 +3,23 @@ name: Python Linter & Tests
 on: [push, pull_request]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
-    - name: install dependencies
-    - run: |
-          pip install --upgrade pip
-          pip install pipenv
-          pipenv --python 3.8
-          pipenv install nose pylint --dev
-    - name: run linter
-    - run: |
-          pipenv run pylint app
-    - name: run tests
-    - run: |
-          pipenv run nosetests
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+      - name: install dependencies
+      - run: |
+            pip install --upgrade pip
+            pip install pipenv
+            pipenv --python 3.8
+            pipenv install nose pylint --dev
+      - name: run linter
+      - run: |
+            pipenv run pylint app
+      - name: run tests
+      - run: |
+            pipenv run nosetests
