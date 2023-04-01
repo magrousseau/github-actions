@@ -38,4 +38,4 @@ jobs:
           source_branch: ""
           destination_branch: "master"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Pulling ${{ github.ref }} into master - Awesome PR by ${{ github.actor }}"
+          pr_title: "Pulling ${{ github.ref }} into master. Awesome PR by ${{ github.actor }}"
