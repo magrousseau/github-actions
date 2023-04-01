@@ -1,7 +1,5 @@
 name: Python Linter & Tests
-
 on: [push]
-
 jobs:
   runs-on: ubuntu-latest
   steps:
